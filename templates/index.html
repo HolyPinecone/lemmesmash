@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lemme Smash</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .box {
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .button.red {
+            background-color: #008000;
+            color: white;
+        }
+        .button.green {
+            background-color: #af0000;
+            color: white;
+        }
+        .tos {
+            cursor: pointer;
+            text-decoration: underline;
+            color: blue;
+        }
+        .tos-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function toggleTos() {
+            var tosText = document.getElementById("tos-text");
+            if (tosText.style.display === "none") {
+                tosText.style.display = "block";
+            } else {
+                tosText.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>{{ text|safe }}</h1>
+            <h1>{{ heart }}</h1>
+            <div class="button-container">
+                <a href="/smash1" class="button red">Yes</a>
+                <a href="/smash2" class="button green">Yes</a>
+            </div>
+            <div class="tos" onclick="toggleTos()">More info</div>
+            <div class="tos-text" id="tos-text">By clicking yes u give me consent to smash</div>
+        </div>
+    </div>
+</body>
+</html>
